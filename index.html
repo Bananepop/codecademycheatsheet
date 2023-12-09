@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaby's CSS Selectors Cheatsheet</title>
+    <link href="Style/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Gaby's CSS Selectors Cheatsheet</h1>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Selector</th>
+                <th scope="col">Description</th>
+                <th scope="col">Syntax</th>
+                <th scope="col">Examples</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="selector-name">Type</td>
+                <td>Selects all elements of a given type throughout the HTML document.</td>
+                <td class="syntax">
+                    <span class="css-code">type {property: value;}</span>
+                </td>
+                <td>p {color:green}</td>
+            </tr>
+            <tr>
+                <td class="selector-name">Universal</td>
+                <td>Selects all elements of any type. It uses the * character where you specified the type selector in a
+                    ruleset.</td>
+                <td class="syntax">
+                    <span class="css-code">* {property: value;}</span>
+                </td>
+                <td>* {font-family: Verdana;}</td>
+            </tr>
+            <tr>
+                <td class="selector-name">Class</td>
+                <td>A Class is like a category. When we put classes to HTML elements we are categorizing them. <br>To
+                    select
+                    an HTML element by its class using CSS, a period (.) must be prepended to the class' name.</td>
+                <td class="syntax">
+                    <span class="css-code">. class_name {property: value;}</span>
+                </td>
+                <td>HTML:&lt;p&gt;class="brand">Sole Shoe Company&lt;/p&gt;
+                    <br>CSS: .brand {color: pink}
+                </td>
+            </tr>
+            <tr>
+                <td class="selector-name">Multiple Classes</td>
+                <td>The concept of multiple classes in CSS refers to the possibility of assigning more than one class to
+                    an
+                    HTML element. <br>This allows you to apply several different sets of styles to the same element.
+                    With a
+                    class you can set several properties (styles) to the same element. With multiple classes you can
+                    create
+                    different sets of properties and apply them to the same element when needed without having to create
+                    a
+                    separate class for each combination.</td>
+                <td class="syntax">
+                    <span class="css-code">. class_name1 {property: value;}
+                        <br>
+                        <br>. class_name2 {property: value;}
+                    </span>
+                </td>
+                <td>HTML:&lt;p&gt;class="class1 class2">paragraph with multiple classes&lt;/p&gt;
+                    <br>CSS: .class1 {color: pink;}
+                    <br>CSS: .class2 {background-color: yellow;}
+                </td>
+            </tr>
+            <tr>
+                <td class="selector-name">ID (Identifier)</td>
+                <td>A unique identifier for an HTML element, specified using the id attribute, and is used in CSS to
+                    apply
+                    styles to that specific element. To select an element's ID with CSS we prepend the ID name with a
+                    number
+                    sign (#)</td>
+                <td class="syntax">
+                    <span class="css-code">#id_name {}</span>
+
+                </td>
+                <td>HTML:&lt;h1&gt;id="main_title">Fit Journal&lt;/h1&gt;
+                    <br>CSS: #main_title {}
+                </td>
+            </tr>
+            <tr>
+                <td class="selector-name">Attribute</td>
+                <td>An attribute selector is a way to target HTML elements based on the presence or value of their
+                    attributes. This alleviates the need to add new code like the Class or ID attributes.<br>
+                    Remember that Attributes are content added to the opening tag of an element and are made up of two
+                    parts: Name=Value</td>
+                <td class="syntax">The most basic syntax is an attribute surrounded by square brackets:<br><br>
+                    <span class="css-code">[href]{color:
+                    magenta;}</span><br><br>
+                    It can get more granular from there by adding type and/or attribute values:<br><br>
+                    <span class="css-code">type[attribute*=value]</span></td>
+                <td>We have the following attribute in HTML:<br><br> &lt;img
+                    src='images/seasons/cold/winter.jpg'&gt;<br><br>
+                    To select it in CSS we have to:<br><br> img[src*='winter']{height: 50px;}<br>
+                    img is the type<br>
+                    src is the attribute<br>
+                    winter is the value<br>
+                    This ruleset looks for an element (img) with an attribute of src that contains the string 'winter',
+                    and sets the height to 50px</td>
+            </tr>
+            <tr>
+                <td class="selector-name">Pseudo-class</td>
+                <td>Es una keyword que se le añade a un selector que permite estilizar elementos basados en su estado o
+                    posición en un documento. Proveen una manera de aplicar estilos de manera dinámica basado en la
+                    interacción del usuario, site navigation y position in the document.</td>
+                <td class="syntax">A pseudo-class can be attached to any selector. It is always written as a colon <span class="css-code">(:)</span> followed by a name: <br><br>
+                    <span class="css-code">:focus<br> :visited<br> :disabled<br> :active</span>
+
+                </td>
+                <td>
+                    p:hover {background-color:lime;}<br><br>
+                    In the example above we are selecting the paragraph element and using the :hover pseudo-class to set
+                    the background color to lime. That way, every time a user hovers a pointer over a paragraph, the
+                    paragraph will set its background color to lime.
+                
+                </td>
+            </tr>
+            <tr>
+                <td class="selector-name">Classes & IDs</td>
+                <td>Classes can be reusable, while IDs can only be used once</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="selector-name">Specificity</td>
+                <td>Specificity is the order by which the browser decides which CSS styles will be displayed.<br><br>
+                    To make styles easy to edit it's best to style with a type selector if possible. If not, add a class
+                    selector. If that is not specific enough, then consider using an ID selector.</td>
+                <td>IDs are the most specific selectors in CSS, followed by classes, and finally, type.</td>
+                <td>HTML: &lt;h1 class='headline'&gt;<br><br>
+                    CSS: h1 {color: red;}<br><br>
+                    .headline {color: firebrick;}<br><br>
+                    In the example above, the color of the headline would be set to firebrick as class selectors are
+                    more specific than the type selector</td>
+            </tr>
+            <tr>
+                <td class="selector-name">Chaining</td>
+                <td>CSS selectors can be chained so that rule sets apply only to elements that match all criteria. For
+                    instance, to select &lt;h3&gt; elements that also have the section-heading class, the selector
+                    h3.section-heading can be used.</td>
+                <td class="syntax">/* Select h3 elements with the section-heading class */<br><br>
+                    <span class="css-code">h3.section-heading {
+                    color: blue;}</span><br><br>
+                    /* Select elements with the section-heading and button class */<br><br>
+                    <span class="css-code">.section-heading.button {
+                    cursor: pointer;}</span>
+                </td>
+                <td class="syntax">
+                    <span class="css-code"><a href="https://youtu.be/6VGKD7p4p-w?si=vwlDG2EeoPzTot4F" target="_blank">Best examples</a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="selector-name">Descendant Combinator</td>
+                <td>CSS also supports selecting elements that are nested within other HTML elements, also known as
+                    descendants. el elemento target siempre va a estar al lado de las llaves y antes, el elemento padre.
+                    HAY QUE DEJAR UN ESPACIO ENTRE CADA ELEMENTO. El espacio indica que es un nivel arriba o abajo.</td>
+                <td class="syntax">
+                    <span class="css-code"><a href="https://youtu.be/6VGKD7p4p-w?si=vwlDG2EeoPzTot4F" target="_blank">Best examples</a></span>
+                </td>
+                <td>&lt;ul class="main-list"&gt;<br>
+                    &lt;li&gt;...&lt;/li&gt;<br>
+                    &lt;li&gt;...&lt;/li&gt;<br>
+                    &lt;li&gt;...&lt;/li&gt;<br>
+
+                    &lt;/ul&gt;<br><br>
+                    The nested &lt;li&gt; elements are descendants of the &lt;ul&gt; element and can be selected with
+                    the descendant combinator like so:<br><br>
+                    .main-list li{}
+                    <br><br>
+                    In the example above, .main-list selects the element with the .main-list class (the &lt;ul&gt;
+                    element). The descendant &lt;li&gt;s are selected by adding li to the selector, SEPARATED BY A
+                    SPACE. This results in .main-list li as the final selector.
+                </td>
+            </tr>
+            <tr>
+                <td class="selector-name">Chaining & Specificity</td>
+                <td>Keep in mind that when you are chaining selectors, the level of specificity greatly influences which
+                    style will be applied to an element.</td>
+                <td></td>
+                <td class="syntax">
+                    <span class="css-code"><a href="https://youtu.be/6VGKD7p4p-w?si=vwlDG2EeoPzTot4F" target="_blank">Best examples</a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="selector-name">Multiple Selectors</td>
+                <td>Grouping CSS selectors allows you to apply the same styles to multiple elements efficiently by using
+                    a single rule separated by commas. The comma in CSS selectors functions as "and," applying styles to
+                    multiple elements collectively. If the comma were missing, the selector would instead apply to all
+                    paragraph elements that are a child of a division. That is a different kind of selector, so the
+                    comma is important.</td>
+                <td class="syntax">
+                    <span class="css-code">selector, selector2, selector3...{property:value;}</span>
+
+                </td>
+                <td>p, .red, #sub, div a:link { color: #f00; }<br><br>
+                    This CSS rule would apply to:<br><br>
+
+                    * Any paragraph element<br>
+                    * Any element with the class of red<br>
+                    * Any element with an ID of sub<br>
+                    * The link pseudo class of the anchor elements that are descendants of a division.<br><br>
+
+                    That last selector is a compound selector. As shown, it's easily combined with the other selectors
+                    in this CSS rule. The rule sets the color of #f00 (red) on these four selectors, which is preferable
+                    to writing four separate selectors to achieve the same result.<br><br>
+                    More examples and info <a href="https://www.thoughtco.com/grouping-multiple-css-selectors-3467065"
+                        target="_blank">here</a></td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+
+</html>
