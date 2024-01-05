@@ -11,5 +11,6 @@ After finishing the HTML and CSS module on Codecademy, I was assigned a project 
 
 3. My site should utilize a custom color scheme.
 4. My site should use custom styles for any code such as HTML tags or CSS properties or values. I also had to represent code using a monospace font family and a different background color.
+5. To visit this site follow: https://bananepop.github.io/codecademycheatsheet/
 
 I am very proud of what I did. I know it could be improved, but to be my first project without following a step-by-step tutorial, it turned out awesome!
